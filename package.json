@@ -1,6 +1,6 @@
 {
   "name": "simple-download",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Simple download module",
   "main": "index.js",
   "author": "Federico Vitale",
