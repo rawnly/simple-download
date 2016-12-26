@@ -8,7 +8,7 @@ Easy download files from **url**.
 
 ## Usage
 ```js
-	const download = require('node-downloader');
+	const download = require('simple-download');
 
     var url = 'https://example.com/img.jpg';
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const download = require('node-downloader')
+const download = require('simple-download')
 
 var url = 'https://example.com/myfile.txt'
 
