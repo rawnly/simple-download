@@ -1,7 +1,7 @@
 {
-  "name": "node-downloader",
+  "name": "simple-download",
   "version": "0.1.4",
-  "description": "Download Module",
+  "description": "Simple download module",
   "main": "index.js",
   "author": "Federico Vitale",
   "license": "MIT",
@@ -10,5 +10,11 @@
     "https": "^1.0.0",
     "path": "^0.12.7",
     "randomstring": "^1.1.5"
+  },
+  "scripts": {
+    "test": "./node_modules/eslint/bin/eslint.js index.jsn"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2"
   }
 }

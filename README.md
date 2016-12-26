@@ -1,4 +1,4 @@
-# Node Downloader
+# Simple Download
 Easy download files from **url**.
 
 ## Install
