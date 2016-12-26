@@ -9,12 +9,13 @@ Easy download files from **url**.
 ## Usage
 ```js
 	const download = require(download);
-    
+
     var url = 'https://example.com/img.jpg';
-    
+
     // file_name, url, destination, callback()
     download('myPhoto', url, './');
 ```
+[See example](example.js)
 
 ## API
 
@@ -25,7 +26,7 @@ Easy download files from **url**.
 - extension: *Automatic if url contains the file name*
 
 ### url
-- Type: `string` 
+- Type: `string`
 - required: `true`
 
 ### destination
@@ -37,6 +38,3 @@ Easy download files from **url**.
 Will be executed when download it's finished.
 - Type: `function()`
 - Default: `null`
-
-
-
