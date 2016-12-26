@@ -1,5 +1,5 @@
 {
-  "name": "download.js",
+  "name": "node-downloader",
   "version": "0.1.1",
   "description": "Download Module",
   "main": "index.js",
