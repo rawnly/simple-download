@@ -5,7 +5,7 @@ const random = require('randomstring')
 
 module.exports = (file_name, url, destination, callback) => {
 	'use strict'
-	if ( !file_name ) {
+	if ( !file_name || file_name === 'random') {
 		file_name = random.generate({
 			length: 12,
 			charset: 'readable',

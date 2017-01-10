@@ -3,7 +3,7 @@ Easy download files from **url**.
 
 ## Install
 ```bash
-	$ npm install --save node-downloader
+	$ npm install --save simple-download
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ Easy download files from **url**.
     // file_name, url, destination, callback()
     download('myPhoto', url, './');
 ```
-[See example](example.js)
+See the [example](example.js) or the [Live Example](https://runkit.com/5861c08251463100141ed278/5861c08251463100141ed279)
 
 ## API
 
