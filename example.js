@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-const download = require('simple-download')
+const download = require('./index')
 
-var url = 'https://example.com/myfile.txt'
+var url = 'https://raw.githubusercontent.com/Rawnly/chili-js/master/index.js'
 
-// file_name, url, destination, callback
-download('myfile', url, './', () => {
-	console.log('Downloaded!')
+download('~/Desktop', url, (data) => {
+	console.log(`Downloaded at ${data}`)
 })
