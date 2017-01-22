@@ -8,31 +8,26 @@ Easy download files from **url**.
 
 ## Usage
 ```js
-	const download = require('simple-download');
+		const download = require('simple-download');
+    var url = 'https://example.com/myfile.txt';
 
-    var url = 'https://example.com/img.jpg';
-
-    // file_name, url, destination, callback()
-    download('myPhoto', url, './');
+    // path, url, callback()
+    download('path/to/myFile.txt', url, (data) => {
+    	console.log('Downloaded', data);
+    });
 ```
 See the [example](example.js) or the [Live Example](https://runkit.com/5861c08251463100141ed278/5861c08251463100141ed279)
 
 ## API
 
-### file_name
+### path
 - Type: `string`
-- Default: **random** readable string
-- required: `false`
-- extension: *Automatic if url contains the file name*
+- required: `true`
+- Note: It needs to contain the file name, ex: `~/Desktop/myfile.txt`
 
 ### url
 - Type: `string`
 - required: `true`
-
-### destination
-
-- Type: `string`
-- Default: './'
 
 ### callback
 Will be executed when download it's finished.
