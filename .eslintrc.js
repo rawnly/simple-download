@@ -8,11 +8,11 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-        "no-console": 0,
         "indent": [
             "error",
             "tab"
         ],
+        "no-console": 0,
         "linebreak-style": [
             "error",
             "unix"
