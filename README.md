@@ -9,14 +9,19 @@ Easy download files from **url**.
 ## Usage
 ```js
 		const download = require('simple-download');
-    var url = 'https://example.com/myfile.txt';
+    const url = 'https://example.com/myfile.txt';
 
-    // path, url, callback()
-    download('path/to/myFile.txt', url, (data) => {
-    	console.log('Downloaded', data);
-    });
+		// download(url|opt, callback)
+		download({
+			path: '~/Desktop', //Default
+			file: 'myfile.txt', //last item in the url
+			url: url
+		}, (pos, item) => {
+			console.log(`${item} downloaded in ${pos}`);
+		})
+
 ```
-See the [example](example.js) or the [Live Example](https://runkit.com/5861c08251463100141ed278/5861c08251463100141ed279)
+See the [example](docs/example.js) or the [Live Example](https://runkit.com/5861c08251463100141ed278/5861c08251463100141ed279)
 
 ## API
 

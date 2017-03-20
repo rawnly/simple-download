@@ -1,20 +1,37 @@
 const fs = require('fs')
 const https = require('https')
+const chili = require('chili-js');
 
-var log = console.log
-var get = https.get
+function download(opt, cb) {
+	let url,
+			filename;
 
+	// Download Destination
+	const pp = (opt.path !== undefined) ? opt.path : path.join(home, 'Desktop')
 
-module.exports = (file_path, url, callback) => {
-	var file = fs.createWriteStream(file_path)
+	// Parsing url
+	if (typeof opt == 'object') {
+		url = opt.url;
+	} else if (typeof opt == 'string') {
+		url = opt;
+	} else {
+		throw new Error(`Invalid options input! Expected 'object' or 'string'.`)
+	}
 
-	get(url, function(response) {
-		response.pipe(file).on('finish', () => {
-			if (callback !== undefined) {
-				callback(file_path)
-			} else {
-				log(file + ' Downloaded')
-			}
+	if ( opt.file !== undefined ) {
+		filename = opt.file
+	} else if ( url.split('/')[url.split('/').length - 1].length > 0 ) {
+		filename = url.split('/')[url.split('/').length - 1]
+	} else if (url.split('?')[url.split('?').length - 1]) {
+		filename = url.split('?')[url.split('?').length - 1]
+	}
+
+	https.get(url, response => {
+		response.pipe(fs.createWriteStream(`${pp}/${filename}`)).on('finish', () => {
+			cb(`${pp}/${filename}`, filename)
 		})
-	})
+	});
+
 }
+
+module.exports = download;
