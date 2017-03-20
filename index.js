@@ -1,21 +1,23 @@
 const fs = require('fs')
 const https = require('https')
-const chili = require('chili-js');
+const path = require('path')
+const os = require('os')
+
+const home = os.homedir()
 
 function download(opt, cb) {
-	let url,
-			filename;
+	let url, filename
 
 	// Download Destination
 	const pp = (opt.path !== undefined) ? opt.path : path.join(home, 'Desktop')
 
 	// Parsing url
 	if (typeof opt == 'object') {
-		url = opt.url;
+		url = opt.url
 	} else if (typeof opt == 'string') {
-		url = opt;
+		url = opt
 	} else {
-		throw new Error(`Invalid options input! Expected 'object' or 'string'.`)
+		throw new Error('Invalid options input! Expected "object" or "string".')
 	}
 
 	if ( opt.file !== undefined ) {
@@ -30,8 +32,8 @@ function download(opt, cb) {
 		response.pipe(fs.createWriteStream(`${pp}/${filename}`)).on('finish', () => {
 			cb(`${pp}/${filename}`, filename)
 		})
-	});
+	})
 
 }
 
-module.exports = download;
+module.exports = download
