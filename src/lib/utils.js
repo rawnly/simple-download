@@ -1,4 +1,4 @@
-import os from 'os'
+const os = require('os')
 
 function fixPath(path) {
 	if (path != undefined && typeof path == 'string') {
