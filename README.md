@@ -6,6 +6,9 @@ Easy download files from **url**.
 	$ npm install --save simple-download
 ```
 
+
+## TO UPDATE WITH USAGE
+<!-- 
 ## Usage
 ```js
 		const download = require('simple-download');
@@ -37,4 +40,4 @@ See the [example](docs/example.js) or the [Live Example](https://runkit.com/5861
 ### callback
 Will be executed when download it's finished.
 - Type: `function()`
-- Default: `null`
+- Default: `null` -->

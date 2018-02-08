@@ -1,7 +1,7 @@
 {
   "name": "simple-download",
   "version": "0.4.0",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/Rawnly/simple-download",
   "license": "MIT",
   "description": "Simple Download",
@@ -14,11 +14,6 @@
   },
   "scripts": {
     "fix": "./node_modules/eslint/bin/eslint.js --fix src/index.js",
-    "test": "npm run fix && ./node_modules/eslint/bin/eslint.js index.js",
-    "build-main": "mkdir -p dist && touch dist/index.js && ./node_modules/.bin/babel src/index.js > dist/index.js",
-    "build-lib": "mkdir -p dist/lib && touch dist/lib/utils.js && ./node_modules/.bin/babel src/lib/utils.js > dist/lib/utils.js",
-    "clean": "rm -rf dist",
-    "start": "NODE_ENV=production npm run clean && npm run build-main && npm run build-lib",
-    "build": "NODE_ENV=production npm run clean && npm run build-main && npm run build-lib"
+    "test": "npm run fix && ./node_modules/eslint/bin/eslint.js index.js"
   }
 }

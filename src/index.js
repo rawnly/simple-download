@@ -1,10 +1,9 @@
-import path from 'path'
-import fs from 'fs'
-import https from 'https'
-import http from 'http'
-
-import { URL } from 'url'
-import fixPath from './lib/utils'
+const { URL } = require('url')
+const path = require('path')
+const fs = require('fs')
+const http = require('http')
+const https = require('https')
+const fixPath = require('./lib/utils')
 
 
 class File {
