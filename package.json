@@ -1,19 +1,19 @@
 {
   "name": "simple-download",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "main": "src/index.js",
   "repository": "https://github.com/Rawnly/simple-download",
   "license": "MIT",
   "description": "Simple Download",
-  "author": "Federico Vitale <fedevitale99@gmail.com> (https://rawnly.com)",
+  "author": "Federico Vitale <hi@fedevitale.dev> (https://fedevitale.dev)",
   "private": false,
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "eslint": "^4.9.0"
-  },
   "scripts": {
-    "fix": "./node_modules/eslint/bin/eslint.js --fix src/index.js",
-    "test": "npm run fix && ./node_modules/eslint/bin/eslint.js index.js"
+    "test": "ava"
+  },
+  "dependencies": {
+    "ava": "^3.10.1"
+  },
+  "devDependencies": {
+    "tempy": "^0.5.0"
   }
 }

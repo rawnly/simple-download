@@ -1,57 +1,34 @@
 const { URL } = require('url')
 const path = require('path')
 const fs = require('fs')
-const http = require('http')
 const https = require('https')
-const fixPath = require('./lib/utils')
+const fixPath = require('./lib/fixPath')
 
 
-class File {
-	constructor (url, destination) {
-		this.url = url
-		this.dest = destination
-		this.protocol = new URL(url).protocol
-	}
+/**
+ * @name download
+ * 
+ * @param {String} source
+ * @param {String} destination 
+ * 
+ * @returns void
+ */
+const download = (source, dest) => new Promise(function (resolve, reject) {
+	let client = https
+	let url = new URL(source)
 
-	getURLInfo() {
-		return new URL(this.url)
-	}
+	const parsedPath = path.parse(dest)
+	const filepath = path.join(fixPath(parsedPath.dir), parsedPath.base)
 
-	download() {
-		let url = this.url
-		let dest = this.dest
+	const file = fs.createWriteStream(filepath)
 
-		const _path = path.parse(dest)
-		const path_ = path.join(fixPath(_path.dir), _path.base)
-		const file = fs.createWriteStream( path_ )
-		const protocol = this.protocol
+	client
+		.get(url, response =>
+			response.pipe(file).on('finish', () => 
+				file.close(resolve(file)))
+		)
+		.on('error', reject)
+})
 
-		return new Promise(function(resolve, reject) {
-			var client = http
-
-			switch (protocol) {
-			case 'http:':
-				client = http
-				break
-			case 'https:':
-				client = https
-				break
-			default:
-				reject(`INVALID PROTOCOL: "${protocol}"`)
-			}
-
-			const request = client.get(url, response => {
-				response.pipe(file).on('finish', () => {
-					file.close(resolve(_path))
-				})
-			})
-
-			request.on('error', (e) => {
-				reject(e)
-			})	
-		})
-	}
-}
-
-
-module.exports = File
+module.exports.default = download;
+module.exports = download;
