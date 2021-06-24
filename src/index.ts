@@ -7,10 +7,16 @@ import { fixPath } from '@lib/util'
 /**
  * @name download
  *
- * @param {String} source
- * @param {String} destination
+ * @param {String} urlString - Source url
+ * @param {String} destination - Destination path (with filename)
  *
- * @returns void
+ * @example
+ * ```ts
+ * const downloadPath = await download('https://httpbin.org/image/png', '~/Desktop/my-file.png')
+ * console.log(`Image downloaded to ${downloadPath}`)
+ * ```
+ *
+ * @returns {string | Buffer}
  */
 const download = (urlString: string, destination: string) : Promise<string | Buffer> => {
 	const url = new URL(urlString)
