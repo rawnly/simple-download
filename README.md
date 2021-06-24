@@ -1,19 +1,25 @@
 # Simple Download
-Easy download files from **url**.
+> Download files with ease. (No dependencies!)
+
+[![Wallaby.js](https://img.shields.io/badge/wallaby.js-powered-blue.svg?style=for-the-badge&logo=github)](https://wallabyjs.com/oss/)
 
 ## Install
 ```bash
-	$ npm install --save simple-download
+	npm install simple-download
+
+	# or
+
+	yarn add simple-download
 ```
 
 
 ## Usage
-```js
-		const download = require('simple-download');
+```ts
+		import download from 'simple-download'
+
 		const url = 'https://httpbin.org/image/png'
 
-		download(url, 'my_image.png') //=> Promise
-
+		await download(url, '~/Desktop/my-image.png') //=> Promise<string | Buffer>
 ```
 
 ## API
@@ -25,4 +31,4 @@ Easy download files from **url**.
 ### path
 - Type: `string`
 - required: `true`
-- Note: It needs to contain the file name, ex: `~/Desktop/my_image.png`
+- Note: It must have the file name. (ex: `~/Desktop/my-image.png`)
