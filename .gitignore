@@ -1,4 +1,5 @@
 node_modules
-.older_versions
 dist
+*.png
 docs/
+.DS_Store
