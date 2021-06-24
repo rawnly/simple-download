@@ -15,11 +15,11 @@
 
 ## Usage
 ```ts
-		import download from 'simple-download'
+	import download from 'simple-download'
 
-		const url = 'https://httpbin.org/image/png'
+	const url = 'https://httpbin.org/image/png'
 
-		await download(url, '~/Desktop/my-image.png') //=> Promise<string | Buffer>
+	await download(url, '~/Desktop/my-image.png') //=> Promise<string | Buffer>
 ```
 
 ## API
