@@ -1,7 +1,7 @@
 import { URL } from 'url'
 import https from 'https'
 import fs from 'fs'
-import { fixPath } from '@lib/util'
+import { fixPath } from './lib/util'
 
 
 /**
