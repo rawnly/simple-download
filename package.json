@@ -1,7 +1,7 @@
 {
   "name": "simple-download",
   "description": "Simple Download",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": "https://github.com/Rawnly/simple-download",
@@ -12,8 +12,7 @@
     "build": "ttsc -p tsconfig.build.json",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "prebuild": "rm -rf dist",
-    "prepublishOnly": "npm test && npm run build"
+    "prebuild": "rm -rf dist"
   },
   "dependencies": {},
   "devDependencies": {

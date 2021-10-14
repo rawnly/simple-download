@@ -1,4 +1,4 @@
-import download from '@src/index'
+import download from '../src/index'
 import fs from 'fs'
 
 describe('Download', () => {
